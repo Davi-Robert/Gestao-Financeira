@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "migrate": "prisma migrate dev --name init"
+  },
+  "devDependencies": {
+    "prisma": "6.12.0"
+  },
+  "dependencies": {
+    "@prisma/client": "6.12.0"
+  }
+}

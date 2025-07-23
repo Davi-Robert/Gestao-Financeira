@@ -12,4 +12,81 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+
+}
+
+model User{
+  id  Int @id @default(autoincrement())
+  name String
+  email String @unique @db.VarChar(100) 
+  password String @db.VarChar(128)
+  balance Int @default(0)
+
+  Transaction Transaction[]
+  Installiments Installiments_informations[]
+  query_optimization query_optimization[]
+  EUA_money_exchange EUA_money_exchange[]
+  EUA_Wallet EUA_Wallet[]
+}
+
+model Transaction{
+  id Int @id @default(autoincrement())
+  type String @db.Char(1)
+  value BigInt @default(value: 0)
+  description String? @db.VarChar(100)
+  user User @relation(fields: [fk_user], references: [id])
+  fk_user Int
+}
+
+model Installiments_informations{
+  id Int @id @default(autoincrement())
+  quantity Int @default(1)
+  type_operation String @db.Char(1)
+  total_value BigInt @default(value: 0)
+  description String @db.VarChar(100)
+
+  user User @relation(fields: [fk_user], references: [id])
+  fk_user Int
+
+  installiments Installiments[]
+}
+
+model Installiments{
+  id Int @id @default(autoincrement())
+  order Int @default(1)
+  date DateTime @db.Date
+  Installiments_infos Installiments_informations @relation(fields: [fk_infos], references: [id])
+  fk_infos Int
+}
+
+model query_optimization{
+  id Int @id @default(autoincrement())
+  balance Int
+  date DateTime @db.Date
+
+  user User @relation(fields: [fk_user], references: [id])
+  fk_user Int
+}
+
+
+model EUA_money_exchange{
+  id Int @id @default(autoincrement())
+  type_operation String @db.Char(1)
+  date DateTime @db.Date
+  base_quantity Decimal @db.Decimal(9,8)
+
+  user User @relation(fields: [fk_user], references: [id])
+  fk_user Int
+}
+
+model EUA_Wallet{
+  id Int @id @default(autoincrement())
+  type_operation String @db.Char(1)
+  token String @db.VarChar(9)
+  quantity Decimal @default(value: 0.0) @db.Decimal(9,8)
+  date DateTime @db.Date
+
+  user User @relation(fields: [fk_user], references: [id])
+  fk_user Int
 }
