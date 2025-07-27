@@ -1,5 +1,5 @@
 ## Gestão financeira
-Descrição:
+Descrição:<br>
 Este é um site de gestão financeira para organização de finanças de casa e do mercado financeiro
 
 tecnologias:
@@ -12,17 +12,17 @@ tecnologias:
 </div>
 
 ## como rodar:
-faça download do projeto
-git clone https://github.com:Davi-Robert/Gestao-Financeira
+faça download do projeto<br>
+git clone https://github.com:Davi-Robert/Gestao-Financeira<br>
 
-entre no diretorio do projeto
-cd Gestao-Financeira
+entre no diretorio do projeto<br>
+cd Gestao-Financeira<br>
 
-instale os pacotes necessarios
-npm run install-all
+instale os pacotes necessarios<br>
+npm run install-all<br>
 
-para iniciar a API entre na pasta da api com
-cd backend/api
-npm run start
+para iniciar a API entre na pasta da api com<br>
+cd backend/api<br>
+npm run start<br>
 
 (em breve estará a incialização completa do site)
