@@ -13,7 +13,7 @@ tecnologias:
 
 ## como rodar:
 faça download do projeto
-git clone git@github.com:Davi-Robert/Gestao-Financeira
+git clone https://github.com:Davi-Robert/Gestao-Financeira
 
 entre no diretorio do projeto
 cd Gestao-Financeira
