@@ -30,6 +30,7 @@ lerna-debug.log*
 
 # IDE - VSCode
 .vscode/*
+/.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -58,4 +59,5 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 #db
 /generated/prisma
 
-
+#ideas of features to implement after finish the initial development
+features_notes.txt
